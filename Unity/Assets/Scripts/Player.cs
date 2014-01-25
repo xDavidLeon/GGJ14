@@ -96,10 +96,34 @@ public class Player : MonoBehaviour {
 			Cell c = hit.collider.gameObject.GetComponent<Cell>();
 			c.Step(team);
 		}
+
+		if (IsSharingCell()) 
+		{
+
+		}
 	}
 
 	void OnCollisionEnter(Collision c)
 	{
 		Debug.Log (this.gameObject.name + " - " + c.gameObject.name);
 	}
+
+	bool IsSharingCell()
+	{
+		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+		Vector2 pos = GetCellPos();
+		foreach (GameObject g in players)
+		{
+			if (g == gameObject) continue;
+			Vector2 pos2 = g.GetComponent<Player>().GetCellPos();
+			if (pos.x == pos2.x && pos.y == pos2.y) return true;
+	    }
+		return false;
+	}
+
+	public Vector2 GetCellPos()
+	{
+		return new Vector2((int)transform.position.x,(int)transform.position.z);
+	}
+
 }

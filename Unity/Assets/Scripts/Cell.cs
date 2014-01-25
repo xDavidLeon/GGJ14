@@ -4,13 +4,15 @@ using System.Collections;
 public class Cell : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	
+	void Update () 
+	{
+
 	}
 
 	void OnCollisionEnter(Collision c)
@@ -36,4 +38,11 @@ public class Cell : MonoBehaviour {
 			break;
 		}
 	}
+
+	public void Clear()
+	{
+		renderer.material.color = Color.white;
+	}
+
+
 }
