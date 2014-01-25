@@ -1,13 +1,15 @@
 Shader "Toon/Lighted" {
 	Properties {
 		_Color ("Main Color", Color) = (0.5,0.5,0.5,1)
+		_DetailColor ("Detail Color", Color) = (0.5,0.5,0.5,1)
 		_MainTex ("Base (RGB)", 2D) = "white" {}
+		_DetailTex ("Detail (RGBA)", 2D) = "black" {}
 		_Ramp ("Toon Ramp (RGB)", 2D) = "gray" {} 
 	}
 
 	SubShader {
 		Tags { "RenderType"="Opaque" }
-		LOD 200
+		//LOD 200
 		
 CGPROGRAM
 #pragma surface surf ToonRamp
@@ -35,14 +37,19 @@ inline half4 LightingToonRamp (SurfaceOutput s, half3 lightDir, half atten)
 
 sampler2D _MainTex;
 float4 _Color;
+float4 _DetailColor;
+sampler2D _DetailTex;
 
 struct Input {
 	float2 uv_MainTex : TEXCOORD0;
+	//float2 uv_DetailTex : TEXCOORD0;
 };
 
 void surf (Input IN, inout SurfaceOutput o) {
 	half4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
+	half4 detail = tex2D(_DetailTex, IN.uv_MainTex) * _DetailColor;
 	o.Albedo = c.rgb;
+	if (detail.a > 0.0f) o.Albedo = detail.rgb*2 * detail.a + c.rgb * (1-detail.a);
 	o.Alpha = c.a;
 }
 ENDCG

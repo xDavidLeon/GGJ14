@@ -4,6 +4,8 @@ using System.Collections;
 public class Cell : MonoBehaviour {
 	public Level.TEAM cellTeam = Level.TEAM.NONE;
 	public bool isActivated = false;
+	public int life = 0;
+	public int maxLife = 1;
 
 	// Use this for initialization
 	void Start () 
@@ -19,42 +21,65 @@ public class Cell : MonoBehaviour {
 
 	void OnCollisionEnter(Collision c)
 	{
-		Debug.Log ("Ouch! " + this.gameObject.name + " - " + c.gameObject.name);
 	}
 
 	public void Step(Level.TEAM team)
 	{
+		if (isActivated) return;
 		cellTeam = team;
+		Color c = Color.white;
 		switch (team)
 		{
 		case Level.TEAM.BLUE:
-			renderer.material.color = Color.blue;
+			c = new Color(0.0f/255.0f,76.0f/255.0f,133.0f/255.0f);
+			renderer.material.SetColor("_DetailColor", c);
+			particleSystem.startColor = c;
 			break;
 		case Level.TEAM.GREEN:
-			renderer.material.color = Color.green;
+			c = new Color(39.0f/255.0f,105.0f/255.0f,22.0f/255.0f);
+			renderer.material.SetColor("_DetailColor", c);
+			particleSystem.startColor = c;
 			break;
 		case Level.TEAM.RED:
-			renderer.material.color = Color.red;
+			c = new Color(98.0f/255.0f,14.0f/255.0f,10.0f/255.0f);
+			renderer.material.SetColor("_DetailColor", c);
+			particleSystem.startColor = c;
 			break;
 		case Level.TEAM.YELLOW:
-			renderer.material.color = Color.yellow;
+			c = new Color(128.0f/255.0f,115.0f/255.0f,44.0f/255.0f);
+			renderer.material.SetColor("_DetailColor", c);
+			particleSystem.startColor = c;
 			break;
 		}
 	}
 
 	public void Clear()
 	{
+		if (isActivated) return;
 		cellTeam = Level.TEAM.NONE;
-		renderer.material.color = Color.white;
+		renderer.material.SetColor("_DetailColor", Color.white);
 	}
 
 	public bool ActivateCell()
 	{
 		if (isActivated) return false;
+		particleSystem.Play();
+		life = maxLife;
 		if (HasPlayerOnTop()) return false;
 		isActivated = true;
-		iTween.MoveAdd(this.gameObject,new Vector3(0,1,0),2.0f);
+		Vector3 targetPos = transform.position;
+		targetPos.y = 0.5f;
+		iTween.MoveTo (this.gameObject, targetPos , 2.0f);
 		return true;
+	}
+
+	public void GetHit()
+	{
+		life -= 1;
+		if (life <= 0)
+		{
+			Restart(false);
+		}
 	}
 
 	public bool HasPlayerOnTop()
@@ -75,5 +100,22 @@ public class Cell : MonoBehaviour {
 	public Vector2 GetCellPos()
 	{
 		return new Vector2((int)transform.position.z,(int)transform.position.x);
+	}
+
+	public void Restart(bool restartColor)
+	{
+		if (isActivated) 
+		{
+			particleSystem.Stop();
+			Vector3 targetPos = transform.position;
+			targetPos.y = -0.5f;
+			iTween.MoveTo(this.gameObject,targetPos,0.25f);
+		}
+		if (restartColor)
+		{
+			cellTeam = Level.TEAM.NONE;
+			renderer.material.SetColor("_DetailColor", Color.white);
+		}
+		isActivated = false;
 	}
 }

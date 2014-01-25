@@ -1,12 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Cell.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Powerup.cs">
     <Files>
-      <File FileName="Assets\Scripts\Level.cs" Line="80" Column="11" />
-      <File FileName="Assets\Scripts\Level.cs" Line="80" Column="10" />
-      <File FileName="Assets\Scripts\Player.cs" Line="128" Column="1" />
-      <File FileName="Assets\Scripts\Cell.cs" Line="54" Column="24" />
-      <File FileName="Assets\Scripts\MonoSingleton.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Powerup.cs" Line="19" Column="21" />
+      <File FileName="Assets\Scripts\Level.cs" Line="149" Column="19" />
+      <File FileName="Assets\Scripts\Player.cs" Line="238" Column="30" />
+      <File FileName="Assets\Scripts\Cell.cs" Line="51" Column="34" />
+      <File FileName="Assets\Scripts\MonoSingleton.cs" Line="44" Column="28" />
+      <File FileName="Assets\Scripts\Powerup.cs" Line="19" Column="21" />
+      <File FileName="Assets\iTween\Sample\RotateSample.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Bullet.cs" Line="13" Column="31" />
+      <File FileName="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-LightedOutline.shader" Line="1" Column="1" />
+      <File FileName="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Lighted.shader" Line="45" Column="33" />
+      <File FileName="Assets\Scripts\TimeGUI.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -11,12 +11,15 @@ public class Level : MonoSingleton<Level> {
 		YELLOW = 4
 	};
 
+	public float levelTime = 60;
 	public float cellSize = 1;
 	public int levelRows = 10;
 	public int levelCols = 10;
 	public int activatedCells = 0;
 	public bool gameOver = false;
-
+	public GameObject TimeUp;
+	//public GameObject XWins;
+	public GameObject GUIScoreBlue, GUIScoreRed, GUIScoreGreen, GUIScoreYellow;
 	private Cell[,] cells;
 	public GameObject cellPrefab;
 	public GameObject powerupPrefab;
@@ -42,12 +45,57 @@ public class Level : MonoSingleton<Level> {
 			}
 		}
 
-		StartCoroutine(PowerupCountdown());
+		StartLevel();
+		//StartCoroutine(PowerupCountdown());
 	}
-	
+
+	public void StartLevel()
+	{
+		for (int i = 0; i < levelRows; i++)
+		{
+			for (int j = 0; j < levelCols; j++)
+			{
+				cells[i,j].Restart(true);
+			}
+		}
+		StartCoroutine(PowerupCountdown());
+		scoreBlue = 0;
+		scoreRed = 0;
+		scoreGreen = 0;
+		scoreYellow = 0;
+		levelTime = 60;
+
+		GameObject p1 = GameObject.Find("Player1") as GameObject;
+		p1.transform.position = new Vector3(0.5f,3,9.5f);
+		GameObject p2 = GameObject.Find("Player2") as GameObject;
+		p2.transform.position = new Vector3(9.5f,3,0.5f);
+		GameObject p3 = GameObject.Find("Player3") as GameObject;
+		p3.transform.position = new Vector3(9.5f,3,9.5f);
+		GameObject p4 = GameObject.Find("Player4") as GameObject;
+		p4.transform.position = new Vector3(0.5f,3,0.5f);
+
+		gameOver = false;
+		GUIScoreBlue.SetActive(false);
+		GUIScoreRed.SetActive(false);
+		GUIScoreYellow.SetActive(false);
+		GUIScoreGreen.SetActive(false);
+		
+		TimeUp.SetActive(false);
+	}
+
 	void Update () 
 	{
-		if (Input.GetButtonDown("Jump")) ActivateCells(TEAM.BLUE);
+		//if (Input.GetButtonDown("Jump")) ActivateCells(TEAM.BLUE);
+		if (levelTime > 0) levelTime -= Time.deltaTime;
+		else levelTime = 0;
+		if(levelTime <= 0.0f && gameOver == false) 
+		{
+			gameOver = true;
+			LevelComplete();
+			levelTime = 0;
+		}
+
+		if (Input.GetKeyDown(KeyCode.R)) StartLevel();
 	}
 
 	public Cell GetCell(int row, int col)
@@ -67,11 +115,11 @@ public class Level : MonoSingleton<Level> {
 			if (c.cellTeam == team)
 			{
 				if (c.ActivateCell()) activatedCells++;
-				if (activatedCells >= 96) 
-				{
-					gameOver = true;
-					Debug.Log ("GAME OVER");
-				}
+//				if (activatedCells >= 96) 
+//				{
+//					gameOver = true;
+//					Debug.Log ("GAME OVER");
+//				}
 			}
 		}
 	}
@@ -97,11 +145,11 @@ public class Level : MonoSingleton<Level> {
 
 	IEnumerator PowerupCountdown()
 	{
-		for (float timer = Random.Range(5,10); timer >= 0; timer -= Time.deltaTime)
+		for (float timer = Random.Range(3,6); timer >= 0; timer -= Time.deltaTime)
 			yield return 0;
-
-		GameObject.Instantiate(powerupPrefab, new Vector3((int)Random.Range(0,10) + 0.5f,0.5f,(int)Random.Range(0,10) + 0.5f),Quaternion.identity);
-		if (!gameOver)StartCoroutine(PowerupCountdown());
+		Vector2 freeCell = GetFreeCell();
+		GameObject.Instantiate(powerupPrefab, new Vector3(freeCell.y + 0.5f,5.5f,freeCell.x + 0.5f),Quaternion.identity);
+		if (!gameOver) StartCoroutine(PowerupCountdown());
 	}
 
 	Vector2 GetFreeCell()
@@ -110,5 +158,28 @@ public class Level : MonoSingleton<Level> {
 		int col = Random.Range (0,10);
 		if (GetCell(row,col).isActivated == false) return new Vector2(row,col);
 		else return GetFreeCell();
+	}
+
+	void LevelComplete()
+	{
+		TimeUp.SetActive(true);
+
+		foreach (Cell c in cells)
+		{
+			if (c.cellTeam == TEAM.BLUE) AddScore(TEAM.BLUE);
+			if (c.cellTeam == TEAM.RED) AddScore(TEAM.RED);
+			if (c.cellTeam == TEAM.YELLOW) AddScore(TEAM.YELLOW);
+			if (c.cellTeam == TEAM.GREEN) AddScore(TEAM.GREEN);
+		}
+
+		GUIScoreBlue.SetActive(true);
+		GUIScoreBlue.guiText.text = "Blue: " + scoreBlue;
+		GUIScoreRed.SetActive(true);
+		GUIScoreRed.guiText.text = "Red: " + scoreRed;
+		GUIScoreYellow.SetActive(true);
+		GUIScoreYellow.guiText.text = "Yellow: " + scoreYellow;
+		GUIScoreGreen.SetActive(true);
+		GUIScoreGreen.guiText.text = "Green: " + scoreGreen;
+
 	}
 }
