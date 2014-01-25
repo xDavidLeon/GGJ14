@@ -2,14 +2,6 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
-	public enum TEAM
-	{
-		BLUE = 1,
-		RED = 2,
-		GREEN = 3,
-		YELLOW = 4
-	};
-
 	public float maxSpeed = 1;
 	public float accelerationFactor = 0.9f;
 	public Vector3 desiredSpeed = Vector3.zero;
@@ -20,7 +12,7 @@ public class Player : MonoBehaviour {
 	public float shootForce = 10;
 	public GameObject bullet;
 
-	public TEAM team = TEAM.BLUE; 
+	public Level.TEAM team = Level.TEAM.BLUE; 
 
 	void Awake()
 	{
@@ -34,16 +26,16 @@ public class Player : MonoBehaviour {
 
 		switch (team)
 		{
-		case TEAM.BLUE:
+		case Level.TEAM.BLUE:
 			renderer.material.color = Color.blue;
 			break;
-		case TEAM.GREEN:
+		case Level.TEAM.GREEN:
 			renderer.material.color = Color.green;
 			break;
-		case TEAM.RED:
+		case Level.TEAM.RED:
 			renderer.material.color = Color.red;
 			break;
-		case TEAM.YELLOW:
+		case Level.TEAM.YELLOW:
 			renderer.material.color = Color.yellow;
 			break;
 
