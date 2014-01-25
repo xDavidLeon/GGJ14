@@ -76,6 +76,7 @@ MonoBehaviour:
   currentSpeed: {x: 0, y: 0, z: 0}
   shootForce: 10
   bullet: {fileID: 100000, guid: 257776506569e40468f1cf70e5e4ca9c, type: 2}
+  team: 1
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

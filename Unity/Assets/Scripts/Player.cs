@@ -2,6 +2,14 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
+	public enum TEAM
+	{
+		BLUE = 1,
+		RED = 2,
+		GREEN = 3,
+		YELLOW = 4
+	};
+
 	public float maxSpeed = 1;
 	public float accelerationFactor = 0.9f;
 	public Vector3 desiredSpeed = Vector3.zero;
@@ -12,14 +20,34 @@ public class Player : MonoBehaviour {
 	public float shootForce = 10;
 	public GameObject bullet;
 
+	public TEAM team = TEAM.BLUE; 
+
 	void Awake()
 	{
 		controller = GetComponent<CharacterController>();
 	}
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start () 
+	{
+		controller.detectCollisions = true;
+
+		switch (team)
+		{
+		case TEAM.BLUE:
+			renderer.material.color = Color.blue;
+			break;
+		case TEAM.GREEN:
+			renderer.material.color = Color.green;
+			break;
+		case TEAM.RED:
+			renderer.material.color = Color.red;
+			break;
+		case TEAM.YELLOW:
+			renderer.material.color = Color.yellow;
+			break;
+
+		}
 	}
 	
 	// Update is called once per frame
@@ -57,7 +85,21 @@ public class Player : MonoBehaviour {
 			GameObject b = GameObject.Instantiate(bullet, transform.position + shootDir, Quaternion.identity) as GameObject;
 			//b.GetComponent<Bullet>().direction = shootDir;
 			b.rigidbody.AddForce(shootDir * shootForce, ForceMode.Impulse);
+
 			//Debug.Log(shootDir);
 		}
+
+		RaycastHit hit;
+		if (Physics.Raycast(transform.position, Vector3.down, out hit))
+		{
+			Debug.Log ("RAY - " + gameObject.name + " " + hit.collider.name);
+			Cell c = hit.collider.gameObject.GetComponent<Cell>();
+			c.Step(team);
+		}
+	}
+
+	void OnCollisionEnter(Collision c)
+	{
+		Debug.Log (this.gameObject.name + " - " + c.gameObject.name);
 	}
 }

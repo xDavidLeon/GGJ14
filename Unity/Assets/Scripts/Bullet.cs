@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour {
 
 	void OnCollisionEnter(Collision c)
 	{
-		Debug.Log ("BAM");
+		Debug.Log ("BAM " + this.gameObject.name + " - " + c.gameObject.name);
 		rigidbody.useGravity = true;
 		//Debug.Log(c.gameObject.name);
 	}
