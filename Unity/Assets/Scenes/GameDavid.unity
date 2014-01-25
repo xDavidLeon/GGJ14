@@ -83,7 +83,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalPosition.y
@@ -149,6 +149,14 @@ Prefab:
       propertyPath: team
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
+      propertyPath: maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
   m_RootGameObject: {fileID: 1629778667}
@@ -169,7 +177,7 @@ GameObject:
   - 114: {fileID: 160397171}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccd9f82e92efb849a64efbea8f3fb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 2
   accelerationFactor: .949999988
   desiredSpeed: {x: 0, y: 0, z: 0}
   currentSpeed: {x: 0, y: 0, z: 0}
@@ -259,7 +267,7 @@ Transform:
   m_PrefabInternal: {fileID: 305435025}
   m_GameObject: {fileID: 160397170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: .5, y: 1, z: .5}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -314,7 +322,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalPosition.y
@@ -322,7 +330,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalRotation.x
@@ -380,6 +388,14 @@ Prefab:
       propertyPath: team
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
+      propertyPath: maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
   m_RootGameObject: {fileID: 160397170}
@@ -400,7 +416,7 @@ GameObject:
   - 114: {fileID: 570167370}
   m_Layer: 0
   m_Name: Player4
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -417,7 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccd9f82e92efb849a64efbea8f3fb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 2
   accelerationFactor: .949999988
   desiredSpeed: {x: 0, y: 0, z: 0}
   currentSpeed: {x: 0, y: 0, z: 0}
@@ -490,7 +506,7 @@ Transform:
   m_PrefabInternal: {fileID: 1170600680}
   m_GameObject: {fileID: 570167369}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 1, z: 9}
+  m_LocalPosition: {x: 9.5, y: 1, z: 9.5}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -666,7 +682,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalPosition.y
@@ -674,7 +690,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 9
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalRotation.x
@@ -732,6 +748,14 @@ Prefab:
       propertyPath: team
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
+      propertyPath: maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
   m_RootGameObject: {fileID: 570167369}
@@ -746,7 +770,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalPosition.y
@@ -754,7 +778,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: .5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
       propertyPath: m_LocalRotation.x
@@ -812,6 +836,14 @@ Prefab:
       propertyPath: team
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
+      propertyPath: maxSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
   m_RootGameObject: {fileID: 1635199058}
@@ -832,7 +864,7 @@ GameObject:
   - 114: {fileID: 1629778668}
   m_Layer: 0
   m_Name: Player2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -849,7 +881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccd9f82e92efb849a64efbea8f3fb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 2
   accelerationFactor: .949999988
   desiredSpeed: {x: 0, y: 0, z: 0}
   currentSpeed: {x: 0, y: 0, z: 0}
@@ -922,7 +954,7 @@ Transform:
   m_PrefabInternal: {fileID: 22115664}
   m_GameObject: {fileID: 1629778667}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 9}
+  m_LocalPosition: {x: .5, y: 1, z: 9}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -941,7 +973,7 @@ GameObject:
   - 114: {fileID: 1635199064}
   m_Layer: 0
   m_Name: Player3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1012,7 +1044,7 @@ Transform:
   m_PrefabInternal: {fileID: 1246997731}
   m_GameObject: {fileID: 1635199058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 1, z: 0}
+  m_LocalPosition: {x: 9.5, y: 1, z: .5}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1028,7 +1060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eccd9f82e92efb849a64efbea8f3fb51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 2
   accelerationFactor: .949999988
   desiredSpeed: {x: 0, y: 0, z: 0}
   currentSpeed: {x: 0, y: 0, z: 0}

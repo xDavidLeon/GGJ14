@@ -19,7 +19,7 @@ public class Level : MonoSingleton<Level> {
 		{
 			for (int j = 0; j < levelCols; j++)
 			{
-				GameObject c = GameObject.Instantiate(cellPrefab, new Vector3(i + 0.5f,-0.5f,j+0.5f),Quaternion.identity) as GameObject;
+				GameObject c = GameObject.Instantiate(cellPrefab, new Vector3(j + 0.5f,-0.5f,i+0.5f),Quaternion.identity) as GameObject;
 				c.name = "Cell " + i + "," + j;
 				c.transform.parent = cellContainer.transform;
 				cells[i,j] = c.GetComponent<Cell>();
@@ -35,5 +35,10 @@ public class Level : MonoSingleton<Level> {
 	public Cell GetCell(int row, int col)
 	{
 		return cells[row,col];
+	}
+
+	public Cell GetCell(Vector2 pos)
+	{
+		return cells[(int)pos.x,(int)pos.y];
 	}
 }
