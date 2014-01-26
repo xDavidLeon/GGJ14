@@ -24,6 +24,8 @@ public class Level : MonoSingleton<Level> {
 	public GameObject cellPrefab;
 	public GameObject powerupPrefab;
 
+	public AudioClip speed, explode, freeze, shotgun;
+
 	public int scoreBlue = 0;
 	public int scoreRed = 0;
 	public int scoreGreen = 0;
@@ -232,6 +234,27 @@ public class Level : MonoSingleton<Level> {
 		foreach(GameObject powerUp in powerUps)
 		{
 			GameObject.Destroy(powerUp);
+		}
+	}
+
+	public void playPowerUpSound(Powerup.POWERUP_TYPE power_type)
+	{
+		switch(power_type)
+		{
+		case Powerup.POWERUP_TYPE.EXPLOSION:
+			audio.PlayOneShot(explode);
+			break;
+		case Powerup.POWERUP_TYPE.FREEZE:
+			audio.PlayOneShot(freeze);
+			break;
+		case Powerup.POWERUP_TYPE.SHOTGUN:
+			audio.PlayOneShot(shotgun);
+			break;
+		case Powerup.POWERUP_TYPE.SPEED:
+			audio.PlayOneShot(speed);
+			break;
+		default:
+			break;
 		}
 	}
 }

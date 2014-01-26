@@ -5,6 +5,8 @@ public class Bullet : MonoBehaviour {
 	bool toDie = false;
 	public GameObject parentGO;
 	public Vector3 direction;
+	public AudioClip hitCell1, hitCell2;
+	public AudioClip hitPlayer1, hitPlayer2, hitPlayer3;
 
 	void Start () {
 		StartCoroutine(DieTimer(7));
@@ -29,12 +31,20 @@ public class Bullet : MonoBehaviour {
 		if (c.gameObject.CompareTag("Player") && c.gameObject != this.parentGO)
 		{
 			Player p = c.gameObject.GetComponent<Player>();
-			Debug.Log("BAM");
+
+			int s = Random.Range(0,10);
+			if (s < 3) audio.PlayOneShot(hitPlayer1);
+			else if(s < 6) audio.PlayOneShot(hitPlayer2);
+			else audio.PlayOneShot(hitPlayer3);
+
 			StartCoroutine(p.Knockback(direction));
 		}
 		else if (c.gameObject.CompareTag("Cell"))
 		{
-			audio.Play();	
+			int s = Random.Range(0,10);
+			if (s < 5) audio.PlayOneShot(hitCell1);
+			else audio.PlayOneShot(hitCell2);
+
 			//Player p = this.parentGO.GetComponent<Player>();
 			Cell cell = c.gameObject.GetComponent<Cell>();
 			//if (cell.cellTeam != p.team)

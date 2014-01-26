@@ -70,6 +70,7 @@ public class Cell : MonoBehaviour {
 		Vector3 targetPos = transform.position;
 		targetPos.y = 0.5f;
 		iTween.MoveTo (this.gameObject, targetPos , 2.0f);
+		audio.Play();
 		return true;
 	}
 

@@ -288,7 +288,7 @@ public class Player : MonoBehaviour {
 			Vector2 pos2 = g.GetComponent<Player>().GetCellPos();
 			if (pos.x == pos2.x && pos.y == pos2.y) 
 			{
-				Debug.Log ("Sharing cell " + pos.x + "," + pos.y);
+				//Debug.Log ("Sharing cell " + pos.x + "," + pos.y);
 				return true;
 			}
 	    }
