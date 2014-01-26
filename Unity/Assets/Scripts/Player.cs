@@ -30,6 +30,9 @@ public class Player : MonoBehaviour {
 	public float bulletMaxTimer = 0.5f;
 	public GameObject shootHolder;
 
+	public bool speedUpActive = false;
+	public bool shotgunActive = false;
+
 	public Level.TEAM team = Level.TEAM.BLUE; 
 
 	void Awake()
@@ -265,4 +268,52 @@ public class Player : MonoBehaviour {
 		knocked = false;
 	}
 
+	public void speedPowerUpGet()
+	{
+		speedUpActive = true;
+		StartCoroutine (speedUp (2.0f, 5.0f));
+	}
+
+	public IEnumerator speedUp(float factor, float time)
+	{
+		maxSpeed *= factor;
+		float startTime = Time.time;
+		while(Time.time < (startTime + time)){
+			yield return 0;
+		}
+		maxSpeed /= factor;
+		speedUpActive = false;
+	}
+
+	public void shotgunPowerUpGet()
+	{
+		shotgunActive = true;
+		StartCoroutine (shotgun (0.5f, 5.0f));
+	}
+	
+	public IEnumerator shotgun(float factor, float time)
+	{
+		bulletMaxTimer *= factor;
+		float startTime = Time.time;
+		while(Time.time < (startTime + time)){
+			yield return 0;
+		}
+		bulletMaxTimer /= factor;
+		shotgunActive = false;
+	}
+
+	public void freeze()
+	{
+		knocked = true;
+		StartCoroutine (freezed (3.0f));
+	}
+	
+	public IEnumerator freezed(float time)
+	{
+		float startTime = Time.time;
+		while(Time.time < (startTime + time)){
+			yield return 0;
+		}
+		knocked = false;
+	}
 }

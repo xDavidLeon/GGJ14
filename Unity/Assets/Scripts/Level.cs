@@ -182,4 +182,44 @@ public class Level : MonoSingleton<Level> {
 		GUIScoreGreen.guiText.text = "Green: " + scoreGreen;
 
 	}
+
+	public void freezeAllExcept(TEAM team)
+	{
+		Player p1 = GameObject.Find("Player1").GetComponent<Player>();
+		Player p2 = GameObject.Find("Player2").GetComponent<Player>();
+		Player p3 = GameObject.Find("Player3").GetComponent<Player>();
+		Player p4 = GameObject.Find("Player4").GetComponent<Player>();
+
+		if (p1.team != team) p1.freeze ();
+		if (p2.team != team) p2.freeze ();
+		if (p3.team != team) p3.freeze ();
+		if (p4.team != team) p4.freeze ();
+	}
+
+	//Pintar celdas del alrededor del color 'team'
+	public void explosion(Vector2 cellPos, TEAM team)
+	{
+		int x, y;
+		x = (int)cellPos.x;
+		y = (int)cellPos.y;
+
+		bool t, b, l, r, tl, tr, bl, br;
+		t = y < levelRows-1;
+		b = y > 0;
+		l = x > 0;
+		r = x < levelCols - 1;
+		tl = t && l;
+		tr = t && r;
+		bl = b && l;
+		br = b && r;
+
+		if (t) cells [y+1, x].Step (team);
+		if (b) cells [y-1, x].Step (team);
+		if (l) cells [y, x-1].Step (team);
+		if (r) cells [y, x+1].Step (team);
+		if (tl) cells [y+1, x-1].Step (team);
+		if (tr) cells [y+1, x+1].Step (team);
+		if (bl) cells [y-1, x-1].Step (team);
+		if (br) cells [y-1, x+1].Step (team);
+	}
 }
