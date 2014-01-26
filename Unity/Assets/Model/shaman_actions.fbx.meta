@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 9d6bd452e7ea9b84fa53a4662cd2c4db
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: arm_l
+    100002: arm_r
+    100004: body_LP
+    100006: collar_l
+    100008: collar_r
+    100010: finger1_l
+    100012: finger1_r
+    100014: finger2_l
+    100016: finger2_l_001
+    100018: finger_l
+    100020: finger_r
+    100022: forearm_l
+    100024: forearm_r
+    100026: hand_l
+    100028: hand_r
+    100030: head
+    100032: hips_l
+    100034: hips_r
+    100036: leg_l
+    100038: leg_l_001
+    100040: leg_l_002
+    100042: leg_l_003
+    100044: leg_r
+    100046: leg_r_001
+    100048: leg_r_002
+    100050: leg_r_003
+    100052: neck
+    100054: root
+    100056: //RootNode
+    100058: shaman_bones
+    100060: spine1
+    100062: spine2
+    100064: spine3
+    100066: thumb1_l
+    100068: thumb1_r
+    100070: thumb2_l
+    100072: thumb2_r
+    100074: thumb_l
+    100076: thumb_r
+    400000: arm_l
+    400002: arm_r
+    400004: body_LP
+    400006: collar_l
+    400008: collar_r
+    400010: finger1_l
+    400012: finger1_r
+    400014: finger2_l
+    400016: finger2_l_001
+    400018: finger_l
+    400020: finger_r
+    400022: forearm_l
+    400024: forearm_r
+    400026: hand_l
+    400028: hand_r
+    400030: head
+    400032: hips_l
+    400034: hips_r
+    400036: leg_l
+    400038: leg_l_001
+    400040: leg_l_002
+    400042: leg_l_003
+    400044: leg_r
+    400046: leg_r_001
+    400048: leg_r_002
+    400050: leg_r_003
+    400052: neck
+    400054: root
+    400056: //RootNode
+    400058: shaman_bones
+    400060: spine1
+    400062: spine2
+    400064: spine3
+    400066: thumb1_l
+    400068: thumb1_r
+    400070: thumb2_l
+    400072: thumb2_r
+    400074: thumb_l
+    400076: thumb_r
+    4300000: body_LP
+    7400000: Default Take
+    7400002: PoseLib
+    7400004: shaman_idle
+    7400006: shaman_impact
+    7400008: shaman_shot
+    9500000: //RootNode
+    13700000: body_LP
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: -1
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body_LP
+        weight: 1
+      - path: shaman_bones
+        weight: 1
+      - path: shaman_bones/root
+        weight: 1
+      - path: shaman_bones/root/hips_l
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001/leg_l_002
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001/leg_l_002/leg_l_003
+        weight: 1
+      - path: shaman_bones/root/hips_r
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001/leg_r_002
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001/leg_r_002/leg_r_003
+        weight: 1
+      - path: shaman_bones/root/spine1
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l/arm_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l/arm_l/forearm_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r/arm_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r/arm_r/forearm_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l/finger1_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l/finger1_l/finger2_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l/thumb1_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l/thumb1_l/thumb2_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r/finger1_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r/finger1_r/finger2_l_001
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r/thumb1_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r/thumb1_r/thumb2_r
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: PoseLib
+      takeName: PoseLib
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body_LP
+        weight: 1
+      - path: shaman_bones
+        weight: 1
+      - path: shaman_bones/root
+        weight: 1
+      - path: shaman_bones/root/hips_l
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001/leg_l_002
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001/leg_l_002/leg_l_003
+        weight: 1
+      - path: shaman_bones/root/hips_r
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001/leg_r_002
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001/leg_r_002/leg_r_003
+        weight: 1
+      - path: shaman_bones/root/spine1
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l/arm_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l/arm_l/forearm_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r/arm_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r/arm_r/forearm_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l/finger1_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l/finger1_l/finger2_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l/thumb1_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l/thumb1_l/thumb2_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r/finger1_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r/finger1_r/finger2_l_001
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r/thumb1_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r/thumb1_r/thumb2_r
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: shaman_idle
+      takeName: shaman_idle
+      firstFrame: -1
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body_LP
+        weight: 1
+      - path: shaman_bones
+        weight: 1
+      - path: shaman_bones/root
+        weight: 1
+      - path: shaman_bones/root/hips_l
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001/leg_l_002
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001/leg_l_002/leg_l_003
+        weight: 1
+      - path: shaman_bones/root/hips_r
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001/leg_r_002
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001/leg_r_002/leg_r_003
+        weight: 1
+      - path: shaman_bones/root/spine1
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l/arm_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l/arm_l/forearm_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r/arm_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r/arm_r/forearm_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l/finger1_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l/finger1_l/finger2_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l/thumb1_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l/thumb1_l/thumb2_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r/finger1_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r/finger1_r/finger2_l_001
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r/thumb1_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r/thumb1_r/thumb2_r
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: shaman_impact
+      takeName: shaman_impact
+      firstFrame: -1
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body_LP
+        weight: 1
+      - path: shaman_bones
+        weight: 1
+      - path: shaman_bones/root
+        weight: 1
+      - path: shaman_bones/root/hips_l
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001/leg_l_002
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001/leg_l_002/leg_l_003
+        weight: 1
+      - path: shaman_bones/root/hips_r
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001/leg_r_002
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001/leg_r_002/leg_r_003
+        weight: 1
+      - path: shaman_bones/root/spine1
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l/arm_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l/arm_l/forearm_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r/arm_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r/arm_r/forearm_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l/finger1_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l/finger1_l/finger2_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l/thumb1_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l/thumb1_l/thumb2_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r/finger1_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r/finger1_r/finger2_l_001
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r/thumb1_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r/thumb1_r/thumb2_r
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: shaman_shot
+      takeName: shaman_shot
+      firstFrame: -1
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: body_LP
+        weight: 1
+      - path: shaman_bones
+        weight: 1
+      - path: shaman_bones/root
+        weight: 1
+      - path: shaman_bones/root/hips_l
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001/leg_l_002
+        weight: 1
+      - path: shaman_bones/root/hips_l/leg_l/leg_l_001/leg_l_002/leg_l_003
+        weight: 1
+      - path: shaman_bones/root/hips_r
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001/leg_r_002
+        weight: 1
+      - path: shaman_bones/root/hips_r/leg_r/leg_r_001/leg_r_002/leg_r_003
+        weight: 1
+      - path: shaman_bones/root/spine1
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l/arm_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_l/arm_l/forearm_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r/arm_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/collar_r/arm_r/forearm_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l/finger1_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/finger_l/finger1_l/finger2_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l/thumb1_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_l/thumb_l/thumb1_l/thumb2_l
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r/finger1_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/finger_r/finger1_r/finger2_l_001
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r/thumb1_r
+        weight: 1
+      - path: shaman_bones/root/spine1/spine2/spine3/neck/head/hand_r/thumb_r/thumb1_r/thumb2_r
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 

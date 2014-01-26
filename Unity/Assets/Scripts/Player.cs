@@ -28,7 +28,6 @@ public class Player : MonoBehaviour {
 	public GameObject bullet;
 	private float bulletTimer = 0;
 	public float bulletMaxTimer = 0.5f;
-	public GameObject shootHolder;
 
 	public GameObject sphere;
 
@@ -37,9 +36,17 @@ public class Player : MonoBehaviour {
 
 	public Level.TEAM team = Level.TEAM.BLUE; 
 
+	public GameObject ShamanBody, ShamanBlow, ShamanMask;
+	Animator animBody;
+	Animator animMask;
+	Animator animBlow;
+
 	void Awake()
 	{
 		controller = GetComponent<CharacterController>();
+		animBody = ShamanBody.GetComponent<Animator>();
+		animMask = ShamanMask.GetComponent<Animator>();
+		animBlow = ShamanBlow.GetComponent<Animator>();
 	}
 
 	void Start () 
@@ -70,35 +77,55 @@ public class Player : MonoBehaviour {
 
 	void Update () 
 	{
+
+
+		if (animBody.GetBool("shoot") == true) animBody.SetBool("shoot",false);
+		if (animBody.GetBool("impact") == true) animBody.SetBool("impact",false);
+		if (animMask.GetBool("shoot") == true) animMask.SetBool("shoot",false);
+		if (animMask.GetBool("impact") == true) animMask.SetBool("impact",false);
+		if (animBlow.GetBool("shoot") == true) animBlow.SetBool("shoot",false);
+		if (animBlow.GetBool("impact") == true) animBlow.SetBool("impact",false);
+
+		if(knocked) 
+		{
+			animBody.SetBool("impact",true);
+			animMask.SetBool("impact",true);
+			animBlow.SetBool("impact",true);
+		}
+
 		if (Level.instance.gameOver) 
 		{
 			controller.SimpleMove(Vector3.zero);
-			return;
-		}
-
-		if (knocked) 
-			controller.SimpleMove(knockedDirection*maxSpeed*2);
-		else UpdateInput();
-
-		Debug.DrawRay(transform.position,Vector3.forward);
-
-		if(bulletTimer<bulletMaxTimer) bulletTimer+=Time.deltaTime;
-
-		Cell cell = Level.instance.GetCell(GetCellPos());
-		if (IsSharingCell()) 
-		{
-			cell.Clear();
 		}
 		else 
 		{
-			cell.Step(team);
-		}
 
-		//mover esfera
-		if (sphere != null) 
-		{
-			sphere.transform.Rotate(new Vector3(currentSpeed.magnitude*8.0f,0,0));
+			if (knocked) 
+				controller.SimpleMove(knockedDirection*maxSpeed*2);
+			else UpdateInput();
+
+			Debug.DrawRay(transform.position,Vector3.forward);
+
+			if(bulletTimer<bulletMaxTimer) bulletTimer+=Time.deltaTime;
+
+			Cell cell = Level.instance.GetCell(GetCellPos());
+			if (IsSharingCell()) 
+			{
+				cell.Clear();
+			}
+			else 
+			{
+				cell.Step(team);
+			}
+
+			//mover esfera
+			if (sphere != null) 
+			{
+				sphere.transform.Rotate(new Vector3(currentSpeed.magnitude*8.0f,0,0));
+			}
 		}
+		//.SetBool("shoot",false);
+
 	}
 
 	void UpdateInput()
@@ -218,6 +245,11 @@ public class Player : MonoBehaviour {
 		int s = Random.Range(0,10);
 		if (s < 5) audio.PlayOneShot(shoot1);
 		else audio.PlayOneShot(shoot2);
+
+		animBody.SetBool("shoot",true);
+		animMask.SetBool("shoot",true);
+		animBlow.SetBool("shoot",true);
+		
 	}
 
 	void ShootJoystick()
@@ -240,6 +272,10 @@ public class Player : MonoBehaviour {
 		int s = Random.Range(0,10);
 		if (s < 5) audio.PlayOneShot(shoot1);
 		else audio.PlayOneShot(shoot2);
+
+		animBody.SetBool("shoot",true);
+		animMask.SetBool("shoot",true);
+		animBlow.SetBool("shoot",true);
 	}
 	
 	bool IsSharingCell()
@@ -266,6 +302,7 @@ public class Player : MonoBehaviour {
 
 	public IEnumerator Knockback(Vector3 direction)
 	{
+
 		knocked = true;
 		knockedDirection = direction;
 		float startTime = Time.time;

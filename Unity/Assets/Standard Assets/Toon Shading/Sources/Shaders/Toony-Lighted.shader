@@ -8,6 +8,7 @@ Shader "Toon/Lighted" {
 	}
 
 	SubShader {
+	//Cull Off
 		Tags { "RenderType"="Opaque" }
 		//LOD 200
 		
@@ -48,6 +49,7 @@ struct Input {
 void surf (Input IN, inout SurfaceOutput o) {
 	half4 c = tex2D(_MainTex, IN.uv_MainTex) * _Color;
 	half4 detail = tex2D(_DetailTex, IN.uv_MainTex) * _DetailColor;
+	//if (c.a < 0.05f) discard;
 	o.Albedo = c.rgb;
 	if (detail.a > 0.0f) o.Albedo = detail.rgb*2 * detail.a + c.rgb * (1-detail.a);
 	o.Alpha = c.a;
