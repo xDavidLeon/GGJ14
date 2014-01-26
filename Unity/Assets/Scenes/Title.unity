@@ -2369,6 +2369,11 @@ MonoBehaviour:
   GUIScoreYellow: {fileID: 0}
   cellPrefab: {fileID: 100000, guid: edb86449c6a57a145bbf0ad35b957c4c, type: 2}
   powerupPrefab: {fileID: 100000, guid: 213fd95382c65134e8c2e740d1102ed4, type: 2}
+  wall: {fileID: 0}
+  speed: {fileID: 0}
+  explode: {fileID: 0}
+  freeze: {fileID: 0}
+  shotgun: {fileID: 0}
   scoreBlue: 0
   scoreRed: 0
   scoreGreen: 0
@@ -15468,7 +15473,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1906488250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .5, y: .839999974, z: -0}
+  m_LocalPosition: {x: .5, y: .839999974, z: -1.26999998}
   m_LocalScale: {x: 0, y: 0, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
