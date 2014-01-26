@@ -33,6 +33,7 @@ public class Player : MonoBehaviour {
 
 	public bool speedUpActive = false;
 	public bool shotgunActive = false;
+	float speedUpTime, shotgunTime;
 
 	public Level.TEAM team = Level.TEAM.BLUE; 
 
@@ -315,36 +316,46 @@ public class Player : MonoBehaviour {
 
 	public void speedPowerUpGet()
 	{
-		speedUpActive = true;
-		StartCoroutine (speedUp (2.0f, 5.0f));
+		speedUpTime += 5.0f;
+		if(!speedUpActive)
+		{
+			speedUpActive = true;
+			StartCoroutine (speedUp (2.0f));
+		}
 	}
 
-	public IEnumerator speedUp(float factor, float time)
+	public IEnumerator speedUp(float factor)
 	{
 		maxSpeed *= factor;
 		float startTime = Time.time;
-		while(Time.time < (startTime + time)){
+		while(Time.time < (startTime + speedUpTime)){
 			yield return 0;
 		}
 		maxSpeed /= factor;
 		speedUpActive = false;
+		speedUpTime = 0.0f;
 	}
 
 	public void shotgunPowerUpGet()
 	{
-		shotgunActive = true;
-		StartCoroutine (shotgun (0.5f, 5.0f));
+		shotgunTime += 5.0f;
+		if(!shotgunActive)
+		{
+			shotgunActive = true;
+			StartCoroutine (shotgun (0.5f));
+		}
 	}
 	
-	public IEnumerator shotgun(float factor, float time)
+	public IEnumerator shotgun(float factor)
 	{
 		bulletMaxTimer *= factor;
 		float startTime = Time.time;
-		while(Time.time < (startTime + time)){
+		while(Time.time < (startTime + shotgunTime)){
 			yield return 0;
 		}
 		bulletMaxTimer /= factor;
 		shotgunActive = false;
+		shotgunTime = 0.0f;
 	}
 
 	public void freeze()

@@ -16,7 +16,7 @@ public class Powerup : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//power_type = (POWERUP_TYPE) Random.Range(0,5);
-		power_type = POWERUP_TYPE.WALL;
+		power_type = POWERUP_TYPE.SHOTGUN;
 		iTween.RotateBy(gameObject, iTween.Hash("x", .25, "easeType", "easeInOutBack", "loopType", "pingPong", "delay", .0));
 		Vector3 targetPos = transform.position;
 		targetPos.y = 0.5f;
@@ -43,7 +43,7 @@ public class Powerup : MonoBehaviour {
 				//Debug.Log("WALL!");
 				break;
 			case POWERUP_TYPE.SPEED:
-				if(p.speedUpActive) return; //Si ya tiene ese power activo no lo pilla
+				//if(p.speedUpActive) return; //Si ya tiene ese power activo no lo pilla
 				p.speedPowerUpGet();
 				//Debug.Log("SPEED!");
 				break;
@@ -57,7 +57,7 @@ public class Powerup : MonoBehaviour {
 				//Debug.Log("FREEZE!");
 				break;
 			case POWERUP_TYPE.SHOTGUN:
-				if(p.shotgunActive) return; //Si ya tiene ese power activo no lo pilla
+				//if(p.shotgunActive) return; //Si ya tiene ese power activo no lo pilla
 				p.shotgunPowerUpGet();
 				//Debug.Log("SHOTGUN!");
 				break;
