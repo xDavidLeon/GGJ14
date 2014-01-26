@@ -30,6 +30,8 @@ public class Player : MonoBehaviour {
 	public float bulletMaxTimer = 0.5f;
 	public GameObject shootHolder;
 
+	public GameObject sphere;
+
 	public bool speedUpActive = false;
 	public bool shotgunActive = false;
 
@@ -90,6 +92,13 @@ public class Player : MonoBehaviour {
 		else 
 		{
 			cell.Step(team);
+		}
+
+		//mover esfera
+		if (sphere != null) 
+		{
+			sphere.transform.Rotate(new Vector3(currentSpeed.magnitude*8.0f,0,0));
+			Debug.Log (currentSpeed.magnitude);
 		}
 	}
 
