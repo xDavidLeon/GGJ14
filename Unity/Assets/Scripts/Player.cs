@@ -98,7 +98,6 @@ public class Player : MonoBehaviour {
 		if (sphere != null) 
 		{
 			sphere.transform.Rotate(new Vector3(currentSpeed.magnitude*8.0f,0,0));
-			Debug.Log (currentSpeed.magnitude);
 		}
 	}
 
