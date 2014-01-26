@@ -81,6 +81,8 @@ public class Level : MonoSingleton<Level> {
 		GUIScoreGreen.SetActive(false);
 		
 		TimeUp.SetActive(false);
+
+		deletePowerUps ();
 	}
 
 	void Update () 
@@ -221,5 +223,15 @@ public class Level : MonoSingleton<Level> {
 		if (tr) cells [y+1, x+1].Step (team);
 		if (bl) cells [y-1, x-1].Step (team);
 		if (br) cells [y-1, x+1].Step (team);
+	}
+
+	void deletePowerUps ()
+	{
+		GameObject[] powerUps;
+		powerUps = GameObject.FindGameObjectsWithTag ("PowerUp");
+		foreach(GameObject powerUp in powerUps)
+		{
+			GameObject.Destroy(powerUp);
+		}
 	}
 }

@@ -637,6 +637,8 @@ MonoBehaviour:
   bullet: {fileID: 100000, guid: 257776506569e40468f1cf70e5e4ca9c, type: 2}
   bulletMaxTimer: .5
   shootHolder: {fileID: 0}
+  speedUpActive: 0
+  shotgunActive: 0
   team: 1
 --- !u!143 &160397172
 CharacterController:
@@ -1219,6 +1221,8 @@ MonoBehaviour:
   bullet: {fileID: 100000, guid: 257776506569e40468f1cf70e5e4ca9c, type: 2}
   bulletMaxTimer: .5
   shootHolder: {fileID: 0}
+  speedUpActive: 0
+  shotgunActive: 0
   team: 4
 --- !u!143 &570167371
 CharacterController:
@@ -3368,6 +3372,8 @@ MonoBehaviour:
   bullet: {fileID: 100000, guid: 257776506569e40468f1cf70e5e4ca9c, type: 2}
   bulletMaxTimer: .5
   shootHolder: {fileID: 0}
+  speedUpActive: 0
+  shotgunActive: 0
   team: 2
 --- !u!143 &1629778669
 CharacterController:
@@ -3673,6 +3679,8 @@ MonoBehaviour:
   bullet: {fileID: 100000, guid: 257776506569e40468f1cf70e5e4ca9c, type: 2}
   bulletMaxTimer: .5
   shootHolder: {fileID: 0}
+  speedUpActive: 0
+  shotgunActive: 0
   team: 3
 --- !u!54 &1635199065
 Rigidbody:
