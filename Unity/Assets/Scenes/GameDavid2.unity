@@ -457,10 +457,6 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: 8e43f17e887ba994fb7a55e7a8756016, type: 3}
-    - target: {fileID: 11400000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
-      propertyPath: sphere
-      value: 
-      objectReference: {fileID: 2117520081}
     m_RemovedComponents:
     - {fileID: 13600000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b4d94b47758ae8a4eae8f4005383fe52, type: 2}
@@ -641,7 +637,7 @@ MonoBehaviour:
   bullet: {fileID: 100000, guid: 257776506569e40468f1cf70e5e4ca9c, type: 2}
   bulletMaxTimer: .5
   shootHolder: {fileID: 0}
-  sphere: {fileID: 2117520081}
+  sphere: {fileID: 0}
   speedUpActive: 0
   shotgunActive: 0
   team: 1
