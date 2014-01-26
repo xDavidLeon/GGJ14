@@ -15,8 +15,8 @@ public class Powerup : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		power_type = (POWERUP_TYPE) Random.Range(0,5);
-		//power_type = POWERUP_TYPE.EXPLOSION;
+		//power_type = (POWERUP_TYPE) Random.Range(0,5);
+		power_type = POWERUP_TYPE.WALL;
 		iTween.RotateBy(gameObject, iTween.Hash("x", .25, "easeType", "easeInOutBack", "loopType", "pingPong", "delay", .0));
 		Vector3 targetPos = transform.position;
 		targetPos.y = 0.5f;

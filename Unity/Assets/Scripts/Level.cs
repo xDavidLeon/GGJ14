@@ -24,7 +24,7 @@ public class Level : MonoSingleton<Level> {
 	public GameObject cellPrefab;
 	public GameObject powerupPrefab;
 
-	public AudioClip speed, explode, freeze, shotgun;
+	public AudioClip wall, speed, explode, freeze, shotgun;
 
 	public int scoreBlue = 0;
 	public int scoreRed = 0;
@@ -241,6 +241,9 @@ public class Level : MonoSingleton<Level> {
 	{
 		switch(power_type)
 		{
+		case Powerup.POWERUP_TYPE.WALL:
+			audio.PlayOneShot(wall);
+			break;
 		case Powerup.POWERUP_TYPE.EXPLOSION:
 			audio.PlayOneShot(explode);
 			break;
