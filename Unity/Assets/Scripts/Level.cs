@@ -46,8 +46,8 @@ public class Level : MonoSingleton<Level> {
 				cells[i,j] = c.GetComponent<Cell>();
 			}
 		}
+		if (Application.loadedLevelName != "Title") StartLevel();
 
-		StartLevel();
 		//StartCoroutine(PowerupCountdown());
 	}
 
