@@ -1,7 +1,7 @@
 Shader "Toon/Lighted" {
 	Properties {
 		_Color ("Main Color", Color) = (0.5,0.5,0.5,1)
-		_DetailColor ("Detail Color", Color) = (0.5,0.5,0.5,1)
+		_DetailColor ("Detail Color", Color) = (0.5,0.5,0.5,0)
 		_MainTex ("Base (RGB)", 2D) = "white" {}
 		_DetailTex ("Detail (RGBA)", 2D) = "black" {}
 		_Ramp ("Toon Ramp (RGB)", 2D) = "gray" {} 

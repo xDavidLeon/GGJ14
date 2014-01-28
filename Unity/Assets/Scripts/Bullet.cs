@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour {
 	}
 
 	void Update () {
+		transform.LookAt(transform.position + rigidbody.velocity);
 	}
 
 	void OnCollisionEnter(Collision c)

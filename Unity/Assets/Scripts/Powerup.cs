@@ -12,15 +12,39 @@ public class Powerup : MonoBehaviour {
 	};
 
 	public POWERUP_TYPE power_type = POWERUP_TYPE.WALL;
+	public GameObject mWall, mSpeed, mExplosion, mFreeze, mShotgun;
 
 	// Use this for initialization
 	void Start () {
-		//power_type = (POWERUP_TYPE) Random.Range(0,5);
-		power_type = POWERUP_TYPE.SHOTGUN;
+		power_type = (POWERUP_TYPE) Random.Range(0,5);
+		//power_type = POWERUP_TYPE.SHOTGUN;
 		iTween.RotateBy(gameObject, iTween.Hash("x", .25, "easeType", "easeInOutBack", "loopType", "pingPong", "delay", .0));
 		Vector3 targetPos = transform.position;
 		targetPos.y = 0.5f;
 		iTween.MoveTo(gameObject, targetPos, 2.0f);
+
+		switch (power_type) 
+		{
+		case POWERUP_TYPE.WALL:
+			mWall.SetActive(true);
+			break;
+		case POWERUP_TYPE.SPEED:
+			mSpeed.SetActive(true);
+			
+			break;
+		case POWERUP_TYPE.EXPLOSION:
+			mExplosion.SetActive(true);
+			
+			break;
+		case POWERUP_TYPE.FREEZE:
+			mFreeze.SetActive(true);
+			
+			break;
+		case POWERUP_TYPE.SHOTGUN:
+			mShotgun.SetActive(true);
+			
+			break;
+		}
 	}
 	
 	// Update is called once per frame

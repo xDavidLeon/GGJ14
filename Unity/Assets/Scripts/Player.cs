@@ -132,7 +132,7 @@ public class Player : MonoBehaviour {
 	void UpdateInput()
 	{
 		desiredSpeed = Vector3.zero;
-
+		Vector3 aim = Vector3.zero;
 		switch (input)
 		{
 		case INPUT.KEYBOARD1:
@@ -204,7 +204,9 @@ public class Player : MonoBehaviour {
 			currentSpeed = currentSpeed * accelerationFactor + desiredSpeed * (1-accelerationFactor);
 			controller.SimpleMove(currentSpeed);
 			transform.LookAt(transform.position + currentSpeed);
-
+			aim = new Vector3(Input.GetAxis("C1_RightX"),0,-Input.GetAxis("C1_RightY"));
+			if (aim.magnitude > 0.1f)
+				transform.LookAt(transform.position + aim);
 			if (Input.GetAxis("C1_Triggers") < 0) ShootJoystick ();
 			break;
 		case INPUT.JOYB:
@@ -216,6 +218,9 @@ public class Player : MonoBehaviour {
 			currentSpeed = currentSpeed * accelerationFactor + desiredSpeed * (1-accelerationFactor);
 			controller.SimpleMove(currentSpeed);
 			transform.LookAt(transform.position + currentSpeed);
+			aim = new Vector3(Input.GetAxis("C2_RightX"),0,-Input.GetAxis("C2_RightY"));
+			if (aim.magnitude > 0.1f)
+				transform.LookAt(transform.position + aim);
 
 			if (Input.GetAxis("C2_Triggers") < 0) ShootJoystick ();
 			break;
@@ -261,6 +266,7 @@ public class Player : MonoBehaviour {
 		if (this.input == INPUT.JOYA) bulletDir = new Vector3(Input.GetAxis("C1_RightX"),0,-Input.GetAxis("C1_RightY"));
 		else if (this.input == INPUT.JOYB) bulletDir = new Vector3(Input.GetAxis("C2_RightX"),0,-Input.GetAxis("C2_RightY"));
 		bulletDir.Normalize();
+		if (bulletDir.magnitude < 0.1f) bulletDir = (transform.position + currentSpeed).normalized;
 		
 		Vector3 bulletPos = transform.position + bulletDir;
 		bulletPos.y = transform.position.y;

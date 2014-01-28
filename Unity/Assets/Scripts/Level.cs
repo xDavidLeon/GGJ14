@@ -47,7 +47,7 @@ public class Level : MonoSingleton<Level> {
 			}
 		}
 		if (Application.loadedLevelName != "Title") StartLevel();
-
+		StartCoroutine(PowerupCountdown());
 		//StartCoroutine(PowerupCountdown());
 	}
 
@@ -60,7 +60,7 @@ public class Level : MonoSingleton<Level> {
 				cells[i,j].Restart(true);
 			}
 		}
-		StartCoroutine(PowerupCountdown());
+
 		scoreBlue = 0;
 		scoreRed = 0;
 		scoreGreen = 0;
@@ -100,6 +100,12 @@ public class Level : MonoSingleton<Level> {
 		}
 
 		if (Input.GetKeyDown(KeyCode.R)) StartLevel();
+
+		ResetScore(TEAM.BLUE);
+		ResetScore(TEAM.RED);
+		ResetScore(TEAM.YELLOW);
+		ResetScore(TEAM.GREEN);
+		
 	}
 
 	public Cell GetCell(int row, int col)
@@ -143,6 +149,25 @@ public class Level : MonoSingleton<Level> {
 			break;
 		case TEAM.YELLOW:
 			scoreYellow += 1;
+			break;
+		}
+	}
+
+	public void ResetScore(Level.TEAM team)
+	{
+		switch(team)
+		{
+		case TEAM.BLUE:
+			scoreBlue = 0;
+			break;
+		case TEAM.GREEN:
+			scoreGreen = 0;
+			break;
+		case TEAM.RED:
+			scoreRed = 0;
+			break;
+		case TEAM.YELLOW:
+			scoreYellow = 0;
 			break;
 		}
 	}
